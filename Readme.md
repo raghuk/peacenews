@@ -32,13 +32,12 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 ### Configure Spalsh Screen
+adding some code did the trick, explained [here](https://medium.com/handlebar-labs/how-to-add-a-splash-screen-to-a-react-native-app-ios-and-android-30a3cec835ae)
 
 ---
 
 ### Configure Push Notification
-```
-https://www.npmjs.com/package/react-native-onesignal
-```
+added [react-native-onesignal](https://www.npmjs.com/package/react-native-onesignal) to enable push notifications
 
 ---
 
