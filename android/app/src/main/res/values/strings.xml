@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">Qm_9GsS-1z5S2DSGgbbXgym8JCtFfce95cda-c05d-45d2-bcb2-e08166144cb7</string>
     <string name="app_name">Peace News</string>
 </resources>
