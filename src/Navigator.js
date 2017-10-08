@@ -13,7 +13,7 @@ const NewsTab = StackNavigator({
         navigationOptions: () => ({
             title: 'Peace News',
             headerStyle: {
-                backgroundColor: '#1b6888', borderWidth: 1, borderBottomColor: '#fff'
+                backgroundColor: '#1b6888'
             },
             headerTitleStyle: {
                 color: '#fdfdfd', fontSize: 18
@@ -27,7 +27,7 @@ const NewsTab = StackNavigator({
             title: 'News Detail',
             headerTintColor: '#fff',
             headerStyle: {
-                backgroundColor: '#1b6888', borderWidth: 1, borderBottomColor: '#fff'
+                backgroundColor: '#1b6888'
             },
             headerTitleStyle: {
                 color: '#fdfdfd', fontSize: 18
@@ -46,7 +46,7 @@ const EventsTab = StackNavigator({
         navigationOptions: () => ({
             title: 'Events',
             headerStyle: {
-                backgroundColor: '#1b6888', borderWidth: 1, borderBottomColor: '#fff'
+                backgroundColor: '#1b6888'
             },
             headerTitleStyle: {
                 color: '#fdfdfd', fontSize: 18
@@ -79,7 +79,7 @@ const InfoTab = StackNavigator({
         navigationOptions: () => ({
             title: 'About Us',
             headerStyle: {
-                backgroundColor: '#1b6888', borderWidth: 1, borderBottomColor: '#fff'
+                backgroundColor: '#1b6888'
             },
             headerTitleStyle: {
                 color: '#fdfdfd', fontSize: 18
@@ -98,7 +98,7 @@ const MainTabNavigator = TabNavigator(
                 tabBarIcon: ({ tintColor, focused }) => (
                     <Icon
                         name={focused ? 'ios-paper' : 'ios-paper-outline'}
-                        size={26}
+                        size={28}
                         style={{ marginBottom: -3 }}
                         color={focused ? '#2f95dc' : '#222222'} />
                 )
@@ -112,7 +112,7 @@ const MainTabNavigator = TabNavigator(
                 tabBarIcon: ({ tintColor, focused }) => (
                     <Icon
                         name={focused ? 'ios-megaphone' : 'ios-megaphone-outline'}
-                        size={26}
+                        size={28}
                         style={{ marginBottom: -3 }}
                         color={focused ? '#2f95dc' : '#222222'} />
                 )
@@ -126,7 +126,7 @@ const MainTabNavigator = TabNavigator(
                 tabBarIcon: ({ tintColor, focused }) => (
                     <Icon
                         name={focused ? 'ios-information-circle' : 'ios-information-circle-outline'}
-                        size={26}
+                        size={28}
                         style={{ marginBottom: -3 }}
                         color={focused ? '#2f95dc' : '#222222'} />
                 )

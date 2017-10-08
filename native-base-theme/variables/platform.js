@@ -34,7 +34,7 @@ export default {
   CheckboxIconSize: platform === "ios" ? 21 : 14,
   CheckboxIconMarginTop: platform === "ios" ? undefined : 1,
   CheckboxFontSize: platform === "ios" ? 23 / 0.9 : 18,
-  DefaultFontSize: 15,
+  DefaultFontSize: 17,
   checkboxBgColor: "#039BE5",
   checkboxSize: 20,
   checkboxTickColor: "#fff",
@@ -117,16 +117,16 @@ export default {
 
   // Font
   fontFamily: platform === "ios" ? "System" : "Roboto",
-  fontSizeBase: 14,
+  fontSizeBase: 15,
 
   get fontSizeH1() {
-    return this.fontSizeBase * 1.6;
+    return this.fontSizeBase * 1.8;
   },
   get fontSizeH2() {
-    return this.fontSizeBase * 1.4;
+    return this.fontSizeBase * 1.6;
   },
   get fontSizeH3() {
-    return this.fontSizeBase * 1.2;
+    return this.fontSizeBase * 1.4;
   },
 
   // Footer
