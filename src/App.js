@@ -4,7 +4,6 @@ import codePush from 'react-native-code-push';
 import OneSignal from 'react-native-onesignal';
 
 import Modal from 'react-native-modalbox';
-import SplashScreen from 'react-native-splash-screen';
 import {Container, Content, Text, View} from 'native-base';
 
 import Navigator from './Navigator';
@@ -46,8 +45,6 @@ class App extends Component {
     }
 
     componentDidMount() {
-        SplashScreen.hide();
-
         if (OneSignal) {
             OneSignal.enableSound(true);
             OneSignal.inFocusDisplaying(2);

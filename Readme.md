@@ -21,7 +21,7 @@ react-native upgrade
 ---
 
 ### Configure Icons and Fonts
-- Add an icon named icon.png (256 x 256) to your project root. Then run:
+- add an icon named icon.png (256 x 256) to your project root. Then run:
 ```
 app-icon generate --platforms=android,ios
 ```
@@ -32,11 +32,6 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 ### Configure Spalsh Screen
-
-`react-native link react-native-splash-screen` then follow instruction in given link
-```
-https://github.com/crazycodeboy/react-native-splash-screen#getting-started
-```
 
 ---
 
