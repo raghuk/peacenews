@@ -47,6 +47,19 @@ https://www.npmjs.com/package/react-native-onesignal
 
 ---
 
+### Configure CodePush
+- Account and App Management
+```
+https://microsoft.github.io/code-push/docs/cli.html
+```
+
+- React Native app integration
+```
+https://microsoft.github.io/code-push/docs/react-native.html
+```
+
+---
+
 ### App UI Styling
 ```
 http://nativebase.io

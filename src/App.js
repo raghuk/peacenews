@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
-import CodePush from 'react-native-code-push';
+import codePush from 'react-native-code-push';
 import OneSignal from 'react-native-onesignal';
 
 import Modal from 'react-native-modalbox';
@@ -53,20 +53,20 @@ class App extends Component {
             OneSignal.inFocusDisplaying(2);
         }
 
-        if (CodePush) {
-            CodePush.sync({
+        if (codePush) {
+            codePush.sync({
                 updateDialog: true,
-                installMode: CodePush.InstallMode.IMMEDIATE
+                installMode: codePush.InstallMode.IMMEDIATE
             }, (status) => {
                 switch (status) {
-                    case CodePush.SyncStatus.DOWNLOADING_PACKAGE:
+                    case codePush.SyncStatus.DOWNLOADING_PACKAGE:
                         this.setState({showDownloadingModal: true});
                         this._modal.open();
                         break;
-                    case CodePush.SyncStatus.INSTALLING_UPDATE:
+                    case codePush.SyncStatus.INSTALLING_UPDATE:
                         this.setState({showInstalling: true});
                         break;
-                    case CodePush.SyncStatus.UPDATE_INSTALLED:
+                    case codePush.SyncStatus.UPDATE_INSTALLED:
                         this._modal.close();
                         this.setState({showDownloadingModal: false});
                         break;
@@ -163,6 +163,6 @@ class App extends Component {
 }
 
 
-let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
 
-export default CodePush(codePushOptions)(App);
+export default codePush(codePushOptions)(App);
