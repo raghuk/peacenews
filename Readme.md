@@ -26,7 +26,7 @@ react-native upgrade
 app-icon generate --platforms=android,ios
 ```
 
-- Edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
+- `react-native link react-native-vector-icons` then edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
 ```
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
