@@ -37,17 +37,21 @@ class App extends Component {
     }
 
     componentWillMount() {
-        OneSignal.addEventListener('received', this.onReceived());
-        OneSignal.addEventListener('opened', this.onOpened());
-        OneSignal.addEventListener('registered', this.onRegistered());
-        OneSignal.addEventListener('ids', this.onIds());
+        if (OneSignal) {
+            OneSignal.addEventListener('received', this.onReceived());
+            OneSignal.addEventListener('opened', this.onOpened());
+            OneSignal.addEventListener('registered', this.onRegistered());
+            OneSignal.addEventListener('ids', this.onIds());
+        }
     }
 
     componentDidMount() {
         SplashScreen.hide();
 
-        OneSignal.enableSound(true);
-        OneSignal.inFocusDisplaying(2);
+        if (OneSignal) {
+            OneSignal.enableSound(true);
+            OneSignal.inFocusDisplaying(2);
+        }
 
         if (CodePush) {
             CodePush.sync({
@@ -78,10 +82,12 @@ class App extends Component {
     }
 
     componentWillUnmount() {
-        OneSignal.removeEventListener('received', this.onReceived());
-        OneSignal.removeEventListener('opened', this.onOpened());
-        OneSignal.removeEventListener('registered', this.onRegistered());
-        OneSignal.removeEventListener('ids', this.onIds());
+        if (OneSignal) {
+            OneSignal.removeEventListener('received', this.onReceived());
+            OneSignal.removeEventListener('opened', this.onOpened());
+            OneSignal.removeEventListener('registered', this.onRegistered());
+            OneSignal.removeEventListener('ids', this.onIds());
+        }
     }
 
     onReceived(notification) {
@@ -156,4 +162,7 @@ class App extends Component {
     }
 }
 
-export default App;
+
+let codePushOptions = { checkFrequency: CodePush.CheckFrequency.MANUAL };
+
+export default CodePush(codePushOptions)(App);
