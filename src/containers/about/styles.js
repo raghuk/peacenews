@@ -8,11 +8,12 @@ export default {
     },
     note: {
         color: '#2e78b7',
-        fontSize: 13,
+        fontSize: 14,
         marginBottom: 10
     },
     info: {
-        fontSize: 13,
+        fontSize: 14,
+        fontFamily: 'OpenSans',
         marginBottom: 20
     }
 };

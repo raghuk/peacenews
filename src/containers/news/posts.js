@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
-import {Image, RefreshControl, TouchableOpacity} from 'react-native';
+import {Image, RefreshControl, TouchableNativeFeedback} from 'react-native';
 import {connect} from 'react-redux';
 import {Container, View, List, ListItem, Card, CardItem, Body, Text, Left, Right} from 'native-base';
 
 import {isEmpty} from 'lodash';
+import he from 'he';
 
 import OverlayLoader from '../../components/loaders/OverlayLoader';
 
@@ -13,7 +14,6 @@ import {loadPosts, setCurrentPost} from '../../actions/posts';
 import {getPosts, getIsFetching} from '../../resources/selectors';
 
 import {styles} from './styles';
-
 
 class Posts extends Component {
     static propTypes = {
@@ -72,11 +72,11 @@ class Posts extends Component {
 
     renderItem(item) {
         return (
-            <ListItem key={item.id} style={styles.listItem}>
-                <TouchableOpacity onPress={() => this.onPostSelect(item)}>
-                    <Card style={styles.card}>
+            <TouchableNativeFeedback onPress={() => this.onPostSelect(item)}>
+                <ListItem key={item.id} style={styles.listItem}>
+                    <Card>
                         <CardItem header>
-                            <Left><Text style={styles.title}>{item.title}</Text></Left>
+                            <Left><Text style={styles.title}>{he.decode(item.title)}</Text></Left>
                             <Right><Text style={{color: '#808080'}}>{item.age}</Text></Right>
                         </CardItem>
 
@@ -90,8 +90,8 @@ class Posts extends Component {
                             </Body>
                         </CardItem>
                     </Card>
-                </TouchableOpacity>
-            </ListItem>
+                </ListItem>
+            </TouchableNativeFeedback>
         );
     }
 

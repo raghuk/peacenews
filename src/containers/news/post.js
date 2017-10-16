@@ -2,10 +2,11 @@ import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
 import {Image} from 'react-native';
 import {connect} from 'react-redux';
-import {Container, Content, View, CardItem, Body, Left, Right, Text, Button, Icon} from 'native-base';
+import {Container, Content, View, CardItem, Left, Right, Text, Button, Icon} from 'native-base';
 
 import HTMLView from 'react-native-htmlview';
 import {isEmpty} from 'lodash';
+import he from 'he';
 
 import {getSelectedPost} from '../../resources/selectors';
 
@@ -27,17 +28,15 @@ class Post extends Component {
         } else {
             return (
                 <View style={styles.view}>
-                    <CardItem header style={styles.item}>
-                        <Text>{item.title}</Text>
+                    <CardItem header>
+                        <Text>{he.decode(item.title)}</Text>
                     </CardItem>
 
-                    <CardItem cardBody style={styles.item}>
-                        <Body>
-                            <Image source={{uri: item.image}} style={styles.postPic} />
-                        </Body>
+                    <CardItem cardBody style={{alignItems: 'center'}}>
+                        <Image source={{uri: item.image}} style={styles.postPic} />
                     </CardItem>
 
-                    <CardItem content style={styles.item}>
+                    <CardItem content>
                         <HTMLView value={item.description} stylesheet={htmlStyles}/>
                     </CardItem>
 
