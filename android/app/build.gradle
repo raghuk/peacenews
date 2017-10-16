@@ -111,6 +111,16 @@ android {
         manifestPlaceholders = [onesignal_app_id: "16f99a45-4f5b-4288-bbf4-792902c4be6b",
                                 onesignal_google_project_number: "185530117871"]
     }
+    signingConfigs {
+        release {
+            if (project.hasProperty('PEACENEWS_RELEASE_STORE_FILE')) {
+                storeFile file(PEACENEWS_RELEASE_STORE_FILE)
+                storePassword PEACENEWS_RELEASE_STORE_PASSWORD
+                keyAlias PEACENEWS_RELEASE_KEY_ALIAS
+                keyPassword PEACENEWS_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
     splits {
         abi {
             reset()
@@ -123,6 +133,7 @@ android {
         release {
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            signingConfig signingConfigs.release
         }
     }
     // applicationVariants are e.g. debug, release
