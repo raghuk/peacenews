@@ -37,10 +37,9 @@ class App extends Component {
 
     componentWillMount() {
         if (OneSignal) {
-            OneSignal.addEventListener('received', this.onReceived());
-            OneSignal.addEventListener('opened', this.onOpened());
-            OneSignal.addEventListener('registered', this.onRegistered());
-            OneSignal.addEventListener('ids', this.onIds());
+            OneSignal.addEventListener('received', this.onReceived.bind(this));
+            OneSignal.addEventListener('opened', this.onOpened.bind(this));
+            OneSignal.addEventListener('registered', this.onRegistered.bind(this));
         }
     }
 
@@ -80,10 +79,9 @@ class App extends Component {
 
     componentWillUnmount() {
         if (OneSignal) {
-            OneSignal.removeEventListener('received', this.onReceived());
-            OneSignal.removeEventListener('opened', this.onOpened());
-            OneSignal.removeEventListener('registered', this.onRegistered());
-            OneSignal.removeEventListener('ids', this.onIds());
+            OneSignal.removeEventListener('received', this.onReceived.bind(this));
+            OneSignal.removeEventListener('opened', this.onOpened.bind(this));
+            OneSignal.removeEventListener('registered', this.onRegistered.bind(this));
         }
     }
 
@@ -97,10 +95,6 @@ class App extends Component {
 
     onRegistered(notifData) {
         console.log('Device Registered: ', notifData);
-    }
-
-    onIds(device) {
-        console.log('Device info: ', device);
     }
 
     render() {

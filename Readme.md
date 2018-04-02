@@ -10,6 +10,11 @@ npm run android
 npm run ios
 ```
 
+- to build release app
+```
+cd android
+./gradlew installRelease
+```
 ---
 
 ### To setup/upgrade react-native android & ios folders
